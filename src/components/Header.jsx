@@ -47,7 +47,7 @@ const Header = (props) => {
           >
 
 
-            {props.currentUser.username == undefined ? (
+            {!props?.currentUser?.username ? (
               <NavLink className="headLink right" to="/login">
                <LockOpenIcon /> Login
               </NavLink>

@@ -40,7 +40,7 @@ const ProductDetails = (props) => {
         Axios.get("https://fakestoreapi.com/products/" + id).then((response) => { //get the data of chosen id
             updateProductInfo(response.data);
         })
-    },[])
+    },[id])
 
 
 
@@ -52,7 +52,7 @@ const ProductDetails = (props) => {
                 <h2 className="text-center m-5">Product Details</h2>
                 <div className="row m-5">
                     <div className="col-sm-6">
-                        <img width="100%" src={productInfo.image} alt=" Image " />
+                        <img width="100%" src={productInfo.image} alt=" image1 " />
                     </div>
                     <div className="col-sm-6">
                         <h1 className="display-3" style ={{fontSize:"2.5rem"}}>{productInfo.title}</h1>

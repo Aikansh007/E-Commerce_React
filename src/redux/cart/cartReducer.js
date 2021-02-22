@@ -18,9 +18,9 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_CART:
          //  Add to cart w.r.t ID 
-            let index = state.cart.findIndex(i => i.id == action.product.id);
+            let index = state.cart.findIndex(i => i.id === action.product.id);
             let cart = {}
-            if(index != -1){
+            if(index !== -1){
                 //Item present already so increase quantity
                  cart = state.cart;
                 //  console.log("Found");
@@ -52,13 +52,13 @@ const cartReducer = (state = initialState, action) => {
 
         case DELETE_FROM_CART:
             // deleting from the cart with product id
-            return { ...state, cart: state.cart.filter((i) => i.id != action.itemId) }
+            return { ...state, cart: state.cart.filter((i) => i.id !== action.itemId) }
 
         case INCREASE_QTY:
             // Increase the quantity and price in the cart
              price = 0;
             state.cart.forEach((item) => {
-                if (item.id == action.itemId) {
+                if (item.id === action.itemId) {
                     item.qty += 1
                     price = item.price;
                 }
@@ -78,7 +78,7 @@ const cartReducer = (state = initialState, action) => {
              // Decrease the quantity and price in the cart
          price = 0;
             state.cart.forEach((item) => {
-                if (item.id == action.itemId && item.qty > 1) {
+                if (item.id === action.itemId && item.qty > 1) {
                     item.qty -= 1
                     price = item.price;
                 }

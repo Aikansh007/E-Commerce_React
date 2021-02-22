@@ -9,7 +9,7 @@ import Login from "./Login";
 import OrderSuccess from "./OrderSuccess";
 import ProductDetails from "./ProductDetails";
 import { connect } from "react-redux";
-import { Alert } from "reactstrap";
+
 
 const mapStateToProps = (state) => {
   return {
@@ -18,9 +18,6 @@ const mapStateToProps = (state) => {
 };
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
@@ -45,5 +42,6 @@ class Main extends React.Component {
     );
   }
 }
+
 
 export default connect(mapStateToProps)(Main);

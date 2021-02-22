@@ -3,7 +3,6 @@ import '../css/Cart.css'
 
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import PaymentInfo from './SharedContainer/PaymentInfo';
 import CartDetails from './SharedContainer/CartDetails';
 
 
@@ -16,7 +15,7 @@ const mapStateToProps = state => {
 const Cart = (props) => {
 
     // logic to check if user logged in then forward to checkout otherwise to Login
-  let forwardTo =  props.currentUser.username != undefined ? '/checkout' : '/login'
+  let forwardTo =  props?.currentUser?.username ? '/checkout' : '/login'
    
     return ( 
         <div>

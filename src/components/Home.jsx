@@ -29,13 +29,12 @@ const Home = (props) => {
   const {addToast} = useToasts();
 
   useEffect(() => {
-    const productLength = products.length
-    if (!productLength) {
+  
       Axios.get("https://fakestoreapi.com/products?limit=18").then((res) => {
         setProducts(res.data);
       });
-    }
-    return
+    
+    
   }, []);
 
   const addItem = (item) => {
@@ -54,7 +53,7 @@ const Home = (props) => {
           <img
             className="card-img-top"
             src={pro.image}
-            alt="Card image cap"
+            alt="Cardimg1"
           ></img>
           <div className="card-body">
             <h5 className="card-title">{pro.title}</h5>

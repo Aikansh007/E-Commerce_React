@@ -1,7 +1,7 @@
 import React from "react";
-import AddBoxIcon from '@material-ui/icons/AddBox';
-import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
-import DeleteIcon from '@material-ui/icons/Delete';
+import AddBoxIcon from "@material-ui/icons/AddBox";
+import IndeterminateCheckBoxIcon from "@material-ui/icons/IndeterminateCheckBox";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 import { connect } from "react-redux";
 import {
@@ -51,50 +51,52 @@ const CartDetails = (props) => {
                   <b>${item.price}</b>
                 </h4>
               </div>
-                { props.showIncDec == "true"  &&
-              <div className="mt-3">
-                <a
-                  onClick={() => props.decProductQty(item.id)}
-                  href="#"
-                  style={{
-                    margin: "10px",
-                    fontSize: "30px",
-                    textDecoration: "none",
-                  }}
-                >
-                  <IndeterminateCheckBoxIcon />
-                </a>
-                <input type="text" disabled value={item.qty} />
-                <a
-                  onClick={() => props.incProductQty(item.id)}
-                  href="#"
-                  style={{
-                    margin: "10px",
-                    fontSize: "30px",
-                    textDecoration: "none",
-                  }}
-                >
-                  <AddBoxIcon />
-                </a>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => props.deleteProduct(item.id)}
-                >
-                 <DeleteIcon /> Delete
-                </button>
-              </div>
-            }
-             {
-                            props.showQty == "true" &&
-
-                        <span>Qty : <b>{item.qty}</b></span>
-
-                            
-                        }
+              {props.showIncDec === "true" && (
+                <div className="mt-3">
+                  <div
+                    onClick={() => props.decProductQty(item.id)}
+                    style={{
+                      margin: "10px",
+                      fontSize: "30px",
+                      textDecoration: "none",
+                      display:'inline'
+                    }}
+                  >
+                    <IndeterminateCheckBoxIcon />
+                  </div>
+                  <input type="text" disabled value={item.qty} />
+                  <div
+                    onClick={() => props.incProductQty(item.id)}
+                    href="#"
+                    style={{
+                      margin: "10px",
+                      fontSize: "30px",
+                      textDecoration: "none",
+                      display:'inline'
+                    }}
+                  >
+                    <AddBoxIcon />
+                  </div>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => props.deleteProduct(item.id)}
+                  >
+                    <DeleteIcon /> Delete
+                  </button>
+                </div>
+              )}
+              {props.showQty === "true" && (
+                <span>
+                  Qty : <b>{item.qty}</b>
+                </span>
+              )}
             </div>
           </div>
           <br />
-         <b> <hr style={{borderTop:"2px solid #0c4355"}} />  </b>
+          <b>
+            {" "}
+            <hr style={{ borderTop: "2px solid #0c4355" }} />{" "}
+          </b>
         </div>
       </>
     );

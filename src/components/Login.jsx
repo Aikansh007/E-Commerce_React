@@ -90,7 +90,7 @@ const Login = (props) => {
                   onChange = {(event) => setPassword(event.target.value)} 
                    />
                    
-              <a className='loginLink' href="#"  onClick={(e) => e.preventDefault()}>Forgot your password?</a>
+              <p className='loginLink'   onClick={(e) => e.preventDefault()}>Forgot your password?</p>
              
               <button className="loginbtn" onClick ={() => loginHandler({username:username,password:password})}>Sign In</button>
             </div>

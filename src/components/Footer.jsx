@@ -82,7 +82,7 @@ const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <div fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="#"> IndiaMart.com </a>
+          <p style={{display:"inline"}}> IndiaMart.com </p>
         </div>
       </div>
     </div>
