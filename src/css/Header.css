@@ -1,0 +1,20 @@
+.navbar{
+    font-family: cursive;
+    background: #0c4355;
+      padding: 30px;
+    max-height:fit-content;
+}
+.headLink{
+  text-decoration: none;
+   color: navajowhite;
+}
+.headLink:hover{
+  text-decoration: none;
+  color: darkgray;
+}
+.drpDownMenu{
+  left: -45px;
+}
+.drpDownMenu:hover{
+  background-color:rgb(23, 43, 77) ;
+}
