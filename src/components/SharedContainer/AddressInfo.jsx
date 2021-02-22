@@ -8,7 +8,7 @@ import {
 import { saveAddress } from '../../redux/cart/cartAction';
 import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { useToasts } from 'react-toast-notifications';
+
 
 
 
@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const AddressInfo = (props) => {
-    const {addToast} = useToasts();
+   
 
     const [isModalPopupOpen, togglePopup] = useState(false);
    
