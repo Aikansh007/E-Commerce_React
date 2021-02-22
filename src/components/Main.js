@@ -11,17 +11,30 @@ import ProductDetails from "./ProductDetails";
 import { connect } from "react-redux";
 
 
+
 const mapStateToProps = (state) => {
   return {
     currentUser: state.userReducer.user,
   };
 };
 
+
+
+
+
+
 class Main extends React.Component {
+
+ 
   render() {
     return (
       <div>
+
+        {/* Header which will hide on scroll and shows up when back srolled */}
+      
         <Header></Header>
+       
+
 
         <Switch>
           <Route path="/login" component={Login}></Route>

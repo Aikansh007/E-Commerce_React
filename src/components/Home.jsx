@@ -88,7 +88,7 @@ const Home = (props) => {
       <div className="container" style={{marginBottom:'20px'}}>
         <div className="row">
           <div className="col">
-            <h2 className="text-center m-3" style={{ fontFamily: "cursive" }}>
+            <h2 className="text-center m-3" style={{ fontFamily: "cursive", marginTop:"8rem" }}>
               Products For You
             </h2>
             {/* Now the whole productList is here */}

@@ -20,7 +20,7 @@ const Cart = (props) => {
     return ( 
         <div>
              <div className="container">
-                <h2 className="text-center m-5">Cart</h2>
+                <h2 className="text-center " style={{marginTop:'8rem'}}>Cart</h2>
                 <div className="row">
  
                     {props.LengthOfCart > 0 ?

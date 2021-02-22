@@ -7,7 +7,7 @@ import PaymentInfo from './SharedContainer/PaymentInfo';
 const OrderSuccess = () => {
     return ( 
         <div>
-             <div className="container" style={{textAlign:'center'}}>
+             <div className="container" style={{textAlign:'center',marginTop:"8rem"}}>
                 <div className="m-3" color="info">
                     <div style={{backgroundColor: "#4fd69c"}}>
                         <strong>Success!</strong> Your Order Placed Successfully

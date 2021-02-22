@@ -31,7 +31,7 @@ const Checkout=()=>{
             </div> */}
 
 <div className="container">
-                <h2 className="text-center m-5">Checkout</h2>
+                <h2 className="text-center " style={{marginTop:'8rem'}}>Checkout</h2>
                
                     <div className="col-12 ">
                         <h3 style={{textAlign:"center"}}>Products</h3>

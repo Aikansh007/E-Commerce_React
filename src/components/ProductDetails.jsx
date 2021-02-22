@@ -49,10 +49,10 @@ const ProductDetails = (props) => {
         <>
 
             <div className="container">
-                <h2 className="text-center m-5">Product Details</h2>
+                <h2 className="text-center "  style={{marginTop:'8rem'}}>Product Details</h2>
                 <div className="row m-5">
                     <div className="col-sm-6">
-                        <img width="100%" src={productInfo.image} alt=" image1 " />
+                        <img width="100%" src={productInfo.image} alt=" product1 " />
                     </div>
                     <div className="col-sm-6">
                         <h1 className="display-3" style ={{fontSize:"2.5rem"}}>{productInfo.title}</h1>

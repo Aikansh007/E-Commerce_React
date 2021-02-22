@@ -11,6 +11,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
+import { AppBar, Slide, useScrollTrigger } from "@material-ui/core";
 
 
 const mapStateToProps = (state) => {
@@ -26,10 +27,27 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+
+// scroll to hide App bar
+function HideOnScroll(props) {
+  const { children, window } = props;
+   const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
 const Header = (props) => {
   return (
-    <div>
-      <Navbar className="navbar" style={{fontFamily:'cursive',maxHeight:"fit-content",color:'navajowhite', position:'sticky'}}>
+    <div style={{marginBottom:"100px" , backgroundColor:'#0c4355'}}>
+      
+      <HideOnScroll {...props} >
+        <AppBar>
+
+      <Navbar className="navbar" style={{fontFamily:'cursive',maxHeight:"fit-content",color:'navajowhite'}}>
         <NavLink className="headLink" to="/home">
          <StorefrontIcon /> IndiaMart
         </NavLink>
@@ -66,6 +84,8 @@ const Header = (props) => {
           </span>
         </div>
       </Navbar>
+      </AppBar>
+      </HideOnScroll>
     </div>
   );
 };
