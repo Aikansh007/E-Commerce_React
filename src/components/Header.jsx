@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
 const Header = (props) => {
   return (
     <div>
-      <Navbar className="navbar" style={{fontFamily:'cursive',maxHeight:"fit-content",color:'navajowhite'}}>
+      <Navbar className="navbar" style={{fontFamily:'cursive',maxHeight:"fit-content",color:'navajowhite', position:'sticky'}}>
         <NavLink className="headLink" to="/home">
          <StorefrontIcon /> IndiaMart
         </NavLink>

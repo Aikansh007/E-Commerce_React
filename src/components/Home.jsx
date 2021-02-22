@@ -51,6 +51,7 @@ const Home = (props) => {
       <>
         <div className="card col-lg-4 col-md-6 col-sm-12"  key={pro.id}>
           <img
+            style = {{textAlign:'center'}}
             className="card-img-top"
             src={pro.image}
             alt="Cardimg1"

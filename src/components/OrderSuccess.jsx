@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AddressInfo from './SharedContainer/AddressInfo';
 import CartDetails from './SharedContainer/CartDetails';
 import PaymentInfo from './SharedContainer/PaymentInfo';
 
@@ -21,6 +22,7 @@ const OrderSuccess = () => {
                     </div>
                     <div className="col-sm-12">
                         <PaymentInfo />
+                        <AddressInfo />
                       
                     </div>
                     <p className="lead text-center">

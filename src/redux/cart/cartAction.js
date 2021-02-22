@@ -1,7 +1,7 @@
 
 
 
-import {DECREASE_QTY,INCREASE_QTY,DELETE_FROM_CART,ADD_TO_CART} from './cartType';
+import {DECREASE_QTY,INCREASE_QTY,DELETE_FROM_CART,ADD_TO_CART, SAVE_ADDRESS} from './cartType';
 
 
 // Creating action  creators
@@ -39,6 +39,13 @@ export const decQty=(productId)=>{
         itemId:productId,
         
 
+    }
+}
+
+export const saveAddress = (userAddressInfo) => {
+    return{
+        type:SAVE_ADDRESS,
+        userAddress : userAddressInfo
     }
 }
 

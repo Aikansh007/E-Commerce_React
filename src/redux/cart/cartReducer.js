@@ -1,4 +1,4 @@
-import {DECREASE_QTY,INCREASE_QTY,DELETE_FROM_CART,ADD_TO_CART} from './cartType';
+import {DECREASE_QTY,INCREASE_QTY,DELETE_FROM_CART,ADD_TO_CART, SAVE_ADDRESS} from './cartType';
 // //reducer of the cart operations
 
 
@@ -9,6 +9,17 @@ const initialState = {
     cart: [],
     // Billing state initailisation
     billingInfo: { Total: 0, tax: 0},
+
+      //adding feild for address info
+      addressInfo: {
+        emailId:"",
+        phoneNumber:"",
+        streetAddress: "",
+        city:"",
+        state:"",
+        pincode:"",
+        country:""
+    }
   
 }
 
@@ -93,6 +104,15 @@ const cartReducer = (state = initialState, action) => {
                 }
               
              }
+
+             //Address logic
+
+        case SAVE_ADDRESS:
+            return{
+                ...state,
+                addressInfo:action.userAddress
+            }
+
         default:
             return state;
     }

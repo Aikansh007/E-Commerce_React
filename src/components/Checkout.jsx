@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import AddressInfo from './SharedContainer/AddressInfo';
 import CartDetails from './SharedContainer/CartDetails';
 import PaymentInfo from './SharedContainer/PaymentInfo';
 
@@ -39,7 +40,7 @@ const Checkout=()=>{
                     </div>
                     <div className="col-12" >
                         <PaymentInfo  />
-                        
+                        <AddressInfo edit="true" />
                     </div>
                     <div className="col-sm-12 text-center m-3">
                         <Link to="/cart"><button className="btn btn-primary" style={{margin:"10px"}}>Go Back to Cart</button></Link>
