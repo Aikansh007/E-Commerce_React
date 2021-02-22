@@ -30,17 +30,17 @@ const CartDetails = (props) => {
       <>
         <div className="container">
           <div className="row">
-            <div className="col-6">
+            <div className="col-lg-6 col-md-6 col-sm-12" style={{textAlign:'center'}}>
               <div className="imageCart">
                 <img
-                  style={{ maxWidth: "250px" }}
+                  style={{ maxWidth: "250px", }}
                   src={item.image}
                   alt="item Iamge"
                 ></img>
               </div>
             </div>
 
-            <div className="col-6">
+            <div className="col-lg-6 col-md-6 col-sm-12">
               <br />
               <br />
               <div className="itemHeading">
