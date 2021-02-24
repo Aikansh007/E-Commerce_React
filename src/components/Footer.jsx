@@ -3,6 +3,10 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import HomeIcon from '@material-ui/icons/Home';
+import EmailIcon from '@material-ui/icons/Email';
+import PhoneIcon from '@material-ui/icons/Phone';
+import PrintIcon from '@material-ui/icons/Print';
 
 const Footer = () => {
   return (
@@ -44,16 +48,16 @@ const Footer = () => {
           <div className="col-md-5 col-lg-3">
             <h5 className="text-uppercase mb-4 font-weight-bold">Address</h5>
             <p>
-              <i className="fa fa-home mr-3" /> New York, NY 10012, US
+             <HomeIcon /> New York, NY 10012, US
             </p>
             <p>
-              <i className="fa fa-envelope mr-3" /> info@example.com
+              <EmailIcon /> info@example.com
             </p>
             <p>
-              <i className="fa fa-phone mr-3" /> + 01 234 567 88
+           <PhoneIcon /> + 01 234 567 88
             </p>
             <p>
-              <i className="fa fa-print mr-3" /> + 01 234 567 89
+              <PrintIcon /> + 01 234 567 89
             </p>
           </div>
           <hr className="clearfix w-100 d-md-none" />
