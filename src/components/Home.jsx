@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addProductToCart } from "../redux/cart/cartAction";
 import { useToasts } from "react-toast-notifications";
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const mapStateToProps = (state) => {
   return {
@@ -21,27 +20,25 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const Home = (props) => {
-
   //hooks to change and set state
   const [products, setProducts] = useState([]);
 
   //hooks to set notification
-  const {addToast} = useToasts();
+  const { addToast } = useToasts();
 
   useEffect(() => {
-  
-      Axios.get("https://fakestoreapi.com/products?limit=18").then((res) => {
-        setProducts(res.data);
-      });
-    
-    
+    Axios.get("https://fakestoreapi.com/products?limit=18").then((res) => {
+      setProducts(res.data);
+    });
   }, []);
 
   const addItem = (item) => {
-   
     props.addItemToCart(item);
     // console.log(item);
-   addToast("Product Added Successfully",{appearance:'success',autoDismiss: true})
+    addToast("Product Added Successfully", {
+      appearance: "success",
+      autoDismiss: true,
+    });
   };
 
   //mapping products one by one to productList
@@ -49,9 +46,9 @@ const Home = (props) => {
   const productList = products.map((pro) => {
     return (
       <>
-        <div className="card col-lg-4 col-md-6 col-sm-12"  key={pro.id}>
+        <div className="card col-lg-4 col-md-6 col-sm-12" key={pro.id}>
           <img
-            style = {{textAlign:'center'}}
+            style={{ textAlign: "center" }}
             className="card-img-top"
             src={pro.image}
             alt="Cardimg1"
@@ -67,15 +64,16 @@ const Home = (props) => {
           </div>
           <div className="card-footer">
             <Link to={`/product/${pro.id}`}>
-              <button className="btn btn-primary" style = {{ width :"40%"}}>
-                 View</button>
+              <button className="btn btn-primary" style={{ width: "40%" }}>
+                View
+              </button>
             </Link>
             <button
               className="btn btn-primary price"
               // arrow function to add item
               onClick={() => addItem(pro)}
             >
-             <AddShoppingCartIcon /> Add To Cart
+              <AddShoppingCartIcon /> Add To Cart
             </button>
           </div>
         </div>
@@ -85,10 +83,13 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="container" style={{marginBottom:'20px'}}>
+      <div className="container" style={{ marginBottom: "20px" }}>
         <div className="row">
           <div className="col">
-            <h2 className="text-center m-3" style={{ fontFamily: "cursive", marginTop:"8rem" }}>
+            <h2
+              className="text-center m-3"
+              style={{ fontFamily: "cursive", marginTop: "8rem" }}
+            >
               Products For You
             </h2>
             {/* Now the whole productList is here */}

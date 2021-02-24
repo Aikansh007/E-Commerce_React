@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useToasts } from "react-toast-notifications";
 
-
 // //this will map state with the store
 const mapStateToProps = (state) => {
   return {
@@ -20,79 +19,93 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-
-
 const Login = (props) => {
- 
   //using useState hooks to assign and setsate input field
   //initially empty
-   const [username, setUsername] = useState("");
-   const [password, setPassword] = useState("");
- 
-    
-   //to change route after logout manually : use hooks useHistory
-   let history = useHistory();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-   //hook to set notification
-   const {addToast} = useToasts();
- 
-   
- // //now these credentials are passed to dispatch actions
-   const loginHandler = (credentials) => {
-    
-      // //   console.log("passed data ");
-  // //   console.log(credentials);
+  //to change route after logout manually : use hooks useHistory
+  let history = useHistory();
+
+  //hook to set notification
+  const { addToast } = useToasts();
+
+  // //now these credentials are passed to dispatch actions
+  const loginHandler = (credentials) => {
+    // //   console.log("passed data ");
+    // //   console.log(credentials);
     //------------------------------------------- using thunk Middleware ---------------------//
-     props.login(credentials).then((resp) => {
+    props.login(credentials).then((resp) => {
       // //     console.log(resp);
       // //     console.log("result data");
       // //     console.log(props.user);
-       if (resp.username !== undefined) {
-         //to change route after logout manually : use hooks useHistory
-         history.push("/home");
-       } else {
-        if(username.length === 0){
-          addToast("Enter Username",{appearance:"warning",autoDismiss:true})
-        }else if(password.length === 0){
-          addToast("Enter Password",{appearance:"warning",autoDismiss:true})
-        }else{
-          addToast("Invalid username/Password",{appearance:"error",autoDismiss:true})
+      if (resp.username !== undefined) {
+        //to change route after logout manually : use hooks useHistory
+        history.push("/home");
+      } else {
+        if (username.length === 0) {
+          addToast("Enter Username", {
+            appearance: "warning",
+            autoDismiss: true,
+          });
+        } else if (password.length === 0) {
+          addToast("Enter Password", {
+            appearance: "warning",
+            autoDismiss: true,
+          });
+          setPassword("");
+        } else {
+          addToast("Invalid username/Password", {
+            appearance: "error",
+            autoDismiss: true,
+          });
+          setUsername("");
+          setPassword("");
         }
-         setUsername("");
-         setPassword("");
-       }
-     });
-   };
+      }
+    });
+  };
 
   return (
     <div>
       <div className="loginContainer">
         <div className="container loginBox" id="container">
           <div className="loginform-container sign-in-container">
-            <div className='loginform' >
+            <div className="loginform">
               <h1>Sign in</h1>
 
-              <input 
-                className='loginInput'
-                type="text" 
-                  required 
-                  placeholder="Username" 
-                  value={username}
-                  onChange = {(event) =>  setUsername(event.target.value)}  
-                  />
-             
-              <input 
-                className='loginInput'
+              <input
+                className="loginInput"
+                type="text"
+                required
+                placeholder="Username"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
+              />
+
+              <input
+                className="loginInput"
                 type="password"
-                 required 
-                 placeholder="Password"
-                 value={password}
-                  onChange = {(event) => setPassword(event.target.value)} 
-                   />
-                   
-              <p className='loginLink'   onClick={(e) => e.preventDefault()}>Forgot your password?</p>
-             
-              <button className="loginbtn" onClick ={() => loginHandler({username:username,password:password})}>Sign In</button>
+                required
+                placeholder="Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+
+              <p className="loginLink" onClick={(e) => e.preventDefault()}>
+                Forgot your password?
+              </p>
+
+              <button
+                className="loginbtn"
+                onKeyPress
+                onClick={() =>
+                  loginHandler({ username: username, password: password })
+                }
+              >
+                Sign In
+              </button>
             </div>
           </div>
 
@@ -112,4 +125,4 @@ const Login = (props) => {
     </div>
   );
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

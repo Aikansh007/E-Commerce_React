@@ -11,11 +11,11 @@ function App() {
     <div>
       {/* Providing store globally */}
       <Provider store={store}>
-          <BrowserRouter>
-            <ToastProvider >
+        <BrowserRouter>
+          <ToastProvider placement ="bottom-center" >
             <Main></Main>
-            </ToastProvider>
-          </BrowserRouter>
+          </ToastProvider>
+        </BrowserRouter>
       </Provider>
     </div>
   );

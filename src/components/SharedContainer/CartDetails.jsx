@@ -30,10 +30,13 @@ const CartDetails = (props) => {
       <>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-12" style={{textAlign:'center'}}>
+            <div
+              className="col-lg-6 col-md-6 col-sm-12"
+              style={{ textAlign: "center" }}
+            >
               <div className="imageCart">
                 <img
-                  style={{ maxWidth: "250px", }}
+                  style={{ maxWidth: "250px" }}
                   src={item.image}
                   alt="item Iamge"
                 ></img>
@@ -59,7 +62,7 @@ const CartDetails = (props) => {
                       margin: "10px",
                       fontSize: "30px",
                       textDecoration: "none",
-                      display:'inline'
+                      display: "inline",
                     }}
                   >
                     <IndeterminateCheckBoxIcon />
@@ -72,7 +75,7 @@ const CartDetails = (props) => {
                       margin: "10px",
                       fontSize: "30px",
                       textDecoration: "none",
-                      display:'inline'
+                      display: "inline",
                     }}
                   >
                     <AddBoxIcon />

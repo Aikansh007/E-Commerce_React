@@ -10,31 +10,19 @@ import OrderSuccess from "./OrderSuccess";
 import ProductDetails from "./ProductDetails";
 import { connect } from "react-redux";
 
-
-
 const mapStateToProps = (state) => {
   return {
     currentUser: state.userReducer.user,
   };
 };
 
-
-
-
-
-
 class Main extends React.Component {
-
- 
   render() {
     return (
       <div>
-
         {/* Header which will hide on scroll and shows up when back srolled */}
-      
-        <Header></Header>
-       
 
+        <Header></Header>
 
         <Switch>
           <Route path="/login" component={Login}></Route>
@@ -42,7 +30,7 @@ class Main extends React.Component {
           <Route path="/product/:id" component={ProductDetails}></Route>
           <Route path="/cart" component={Cart}></Route>
           <Route path="/checkout" component={Checkout}></Route>
-         <Route path="/ordersuccess" component={OrderSuccess}></Route>
+          <Route path="/ordersuccess" component={OrderSuccess}></Route>
 
           {/* when there is wrong route or unknown redirect to home */}
 
@@ -55,6 +43,5 @@ class Main extends React.Component {
     );
   }
 }
-
 
 export default connect(mapStateToProps)(Main);

@@ -1,21 +1,20 @@
-.card{
-    margin-top: 10px;
-    width: 18rem;
+.card {
+  margin-top: 10px;
+  width: 18rem;
 }
 
-.card-img-top{
-    height: 300px ;
-    width: 300px;
-    padding-top: 10px ;
+.card-img-top {
+  height: 300px;
+  width: 300px;
+  padding-top: 10px;
 }
-.card-title{
-    font-size: 15px;
-    height: 50px;
+.card-title {
+  font-size: 15px;
+  height: 50px;
 }
-.card-subtitle{
-    margin-top: 10px;
-    
+.card-subtitle {
+  margin-top: 10px;
 }
-.price{
-    float: right;
+.price {
+  float: right;
 }
